@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+	<title>数据列表</title>
+</head>
+<body>
+	<h1>列表</h1>
+	<div>
+		<ul>
+			<li th:each="thymeleaf:${thymeleafs}">
+				<span th:text="${thymeleaf.name}"></span>
+				<span th:text="${thymeleaf.description}"></span>
+				<span th:text="${thymeleaf.application}"></span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
