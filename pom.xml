@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>springboot-develope</groupId>
+    <artifactId>springboot-develope</artifactId>
+    <packaging>pom</packaging>
+
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>springboot-config</module>
+        <module>springboot-data-jpa</module>
+        <module>springboot-filter</module>
+        <module>springboot-kafka</module>
+        <module>springboot-listener</module>
+        <module>springboot-logger</module>
+        <module>springboot-mail</module>
+        <module>springboot-mockjunit</module>
+        <module>springboot-mybatis</module>
+        <module>springboot-redis</module>
+        <module>springboot-swagger</module>
+        <module>springboot-thymeleaf</module>
+        <module>springboot-yaml</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+        <relativePath />
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>exec</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- testng单元测试使用 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.1</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <file>testng.xml</file>
+                    </suiteXmlFiles>
+                    <!-- 跳过错误 -->
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <!-- 编码格式 -->
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <!-- 无需重新构建解决控制台输出乱码 -->
+                    <forkMode>none</forkMode>
+
+                    <properties>
+                        <property>
+                            <name>usedefaultlisteners</name>
+                            <value>false</value>
+                        </property>
+                        <property>
+                            <name>listener</name>
+                            <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
+                        </property>
+                    </properties>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
