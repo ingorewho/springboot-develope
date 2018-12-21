@@ -1,6 +1,0 @@
-spring:
- datasource:
-  dirver-class-name: com.mysql.jdbc.Driver
-  url: jdbc:mysql://10.10.88.51:3306/analysedb
-  username: mpup
-  password: mpup
