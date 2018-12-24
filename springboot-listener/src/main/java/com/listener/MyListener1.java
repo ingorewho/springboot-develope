@@ -3,10 +3,10 @@
  */
 package com.listener;
 
-import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationListener;
-
 import com.event.MyEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.context.ApplicationListener;
 
 /**
  * @author ignore1992
@@ -14,8 +14,9 @@ import com.event.MyEvent;
  */
 public class MyListener1 implements ApplicationListener<MyEvent>
 {
-	Logger logger = Logger.getLogger(MyListener1.class);
-	
+	private Logger logger = LogManager.getLogger();
+
+	@Override
 	public void onApplicationEvent(MyEvent event)
 	{
 		logger.info(String.format("%s监听到事件源：%s.", MyListener1.class.getName(), event.getSource()));

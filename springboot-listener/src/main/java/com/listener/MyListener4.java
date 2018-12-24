@@ -3,11 +3,11 @@
  */
 package com.listener;
 
-import org.apache.log4j.Logger;
+import com.event.MyEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-
-import com.event.MyEvent;
 
 /**
  * @author ignore1992
@@ -16,7 +16,7 @@ import com.event.MyEvent;
 @Component
 public class MyListener4
 {
-	Logger logger = Logger.getLogger(MyListener4.class);
+	private Logger logger = LogManager.getLogger();
 	
 	@EventListener
 	public void listener(MyEvent event)
