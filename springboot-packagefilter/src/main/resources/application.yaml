@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: packagetfilter-server
+server:
+  port: 7008

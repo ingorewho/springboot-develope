@@ -3,13 +3,13 @@
  */
 package yaml.test;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import yaml.config.YamlConfig;
 
 /**
@@ -20,7 +20,7 @@ import yaml.config.YamlConfig;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestYaml
 {
-	private Logger logger = Logger.getLogger(TestYaml.class);
+	private Logger logger = LogManager.getLogger();
 	
 	@Autowired
 	private YamlConfig config;

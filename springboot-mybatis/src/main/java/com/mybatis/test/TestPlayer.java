@@ -3,7 +3,8 @@
  */
 package com.mybatis.test;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import com.mybatis.entity.Player;
 @SpringBootTest(classes=PlayerApplication.class)
 public class TestPlayer
 {
-	Logger logger = Logger.getLogger(TestPlayer.class);
+	Logger logger = LogManager.getLogger();
 	
 	@Autowired
 	private IPlayerMapper playerMapper;

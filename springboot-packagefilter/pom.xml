@@ -11,5 +11,7 @@
 
     <artifactId>springboot-packagefilter</artifactId>
 
+    <dependencies>
 
+    </dependencies>
 </project>
