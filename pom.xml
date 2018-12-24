@@ -23,13 +23,14 @@
         <module>springboot-swagger</module>
         <module>springboot-thymeleaf</module>
         <module>springboot-yaml</module>
+        <module>springboot-packagefilter</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.9.RELEASE</version>
-        <relativePath />
+        <relativePath/>
     </parent>
 
     <dependencies>
