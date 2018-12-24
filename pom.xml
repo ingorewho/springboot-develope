@@ -6,6 +6,7 @@
 
     <groupId>springboot-develope</groupId>
     <artifactId>springboot-develope</artifactId>
+    <packaging>pom</packaging>
 
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -23,6 +24,7 @@
         <module>springboot-thymeleaf</module>
         <module>springboot-yaml</module>
         <module>springboot-packagefilter</module>
+        <module>springboot-interceptor</module>
     </modules>
 
     <properties>
