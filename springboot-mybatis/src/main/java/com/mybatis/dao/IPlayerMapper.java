@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mybatis.dao;
 
@@ -13,17 +13,15 @@ import com.mybatis.entity.Player;
 
 /**
  * @author ignore1992
- *
  */
 @Mapper
-public interface IPlayerMapper
-{
-	@Insert("insert into player(id, name) values(#{id}, #{name})")
-	public void addPlayer(Player aPlayer)throws Exception;
-	
-	@Select("select id, name from player where id=#{id}")
-	public Player queryPlayer(@Param("id") long id)throws Exception;
-	
-	@Delete("delete from player where id=#{id}")
-	public void deletePlayer(@Param("id") long id)throws Exception;
+public interface IPlayerMapper {
+    @Insert("insert into player(id, name) values(#{id}, #{name})")
+    public void addPlayer(Player aPlayer) throws Exception;
+
+    @Select("select id, name from player where id=#{id}")
+    public Player queryPlayer(@Param("id") long id) throws Exception;
+
+    @Delete("delete from player where id=#{id}")
+    public void deletePlayer(@Param("id") long id) throws Exception;
 }
