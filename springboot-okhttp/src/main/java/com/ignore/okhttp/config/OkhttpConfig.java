@@ -46,17 +46,17 @@ public class OkhttpConfig {
     TrustManager[] trustAllCerts = new TrustManager[]{
             new X509TrustManager() {
                 @Override
-                public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                public X509Certificate[] getAcceptedIssuers() {
                     X509Certificate[] x509Certificates = new X509Certificate[0];
                     return x509Certificates;
                 }
                 @Override
                 public void checkClientTrusted(
-                        java.security.cert.X509Certificate[] certs, String authType) {
+                        X509Certificate[] certs, String authType) {
                 }
                 @Override
                 public void checkServerTrusted(
-                        java.security.cert.X509Certificate[] certs, String authType) {
+                        X509Certificate[] certs, String authType) {
                 }
             }
     };
